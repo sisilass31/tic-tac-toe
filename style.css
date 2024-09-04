@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  font-family: Montserrat;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+:root {
+  --blue: #3373b0;
+  --white: #ffffff;
+  --light-grey: #eee;
+  --black: #0c0c0c;
+  --darkgrey: rgb(25, 25, 25);
+  --grey: rgb(61, 61, 61);
+}
+
+body {
+  --dot-bg: var(--black);
+  --dot-color: var(--white);
+  --dot-size: 1px;
+  --dot-space: 22px;
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}
+
+/* backgroung */
+section {
+  width: 100%;
+  height: 100vh;
+  background-size: 400% 400%;
+  position: relative;
+  animation: animate 7.5s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* titre */
+h1 {
+  color: var(--white);
+  background: var(--darkgrey);
+  padding: 10px;
+  margin: 25px;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+/* couleur du 'rejouer' */
+a {
+  color: var(--blue);
+}
+
+/* jeu */
+
+#jeu {
+  display: inline-block;
+  background-color: var(--black);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.container-button {
+  margin-top: 3%;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+}
+
+#jeu button {
+  color: var(--darkgrey);
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  float: left;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* status */
+
+#status {
+  background: var(--light-grey);
+  padding: 10px 0;
+  text-align: center;
+  color: var(--black);
+  font-size: 18px;
+  text-decoration: none;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.reset a {
+  color: var(--white);
+}
+
+.reset button {
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--white);
+  background-color: var(--darkgrey);
+  padding: 8px 8px;
+  box-shadow: none;
+  border-radius: 10px;
+  margin: 25px;
+}
+
+.reset button:hover {
+  color: var(--darkgrey);
+  background-color: var(--black);
+}
+
+@media screen and (max-width: 385px) {
+  #jeu button {
+    width: 70px;
+    height: 70px;
+  }
+  #status {
+    font-size: 14px;
+    height: 60px;
+  }
+  h1 {
+    font-size: 16px;
+    padding: 6px 12px;
+    margin: 16px;
+  }
+}
